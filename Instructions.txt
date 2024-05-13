@@ -9,4 +9,6 @@
 5. Add a condition in the diffusion routine that allows us to turn monochromatic opacity on or off when using SVP. 
 MESA by default does not allow the use of radiative accelerations if the monochromatic opacities are not active;
 
-6. Finally, recompile/reinstall MESA after making the changes.
+6. Add a folder that contains the SVP routine, and add its directory in the makefile for the models;
+
+7. Finally, recompile/reinstall MESA after making the changes.
