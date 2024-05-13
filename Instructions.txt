@@ -1,0 +1,12 @@
+1. Add a new hook that creates null functions in the files star data.inc, star data def.inc, and star controls.inc in the star data folder;
+
+2. Create a new hook file/module called other g rad.f90 and add in the mesa makefile for compile in MESA;
+
+3. Add in the control default that this rootin’ is off by default in MESA;
+
+4. In the radiative acceleration root (in the diffusion procs.f90), add a condition to select whether to use the hook or the default routine;
+
+5. Add a condition in the diffusion routine that allows us to turn monochromatic opacity on or off when using SVP. 
+MESA by default does not allow the use of radiative accelerations if the monochromatic opacities are not active;
+
+6. Finally, recompile/reinstall MESA after making the changes.
