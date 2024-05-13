@@ -7,6 +7,7 @@ Instructions.txt - this is the with the instructions on how to implement SVP in 
 
 SVP.f - The routine that needs to be implemented in run_star_extra.f of MESA, after the modifications in the source code
 
+SVP.zip - it contains the SVP tables, and the main routines of SVP that are called in SVP.f, the ''mod_svp.f'' and ''svp_codes.f''. The mod_svp.f should be called in the makefile that compiles before running the model. 
 
 
 
