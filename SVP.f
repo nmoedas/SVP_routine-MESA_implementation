@@ -10,7 +10,7 @@
     use ionization_lib
     use MOD_SVP, only: initialize_SVP, g_rad_SVP
     implicit none
-    
+    real(dp) :: m_sol = 1.9892d33  ! solar mass (g)
     
     
     
@@ -101,7 +101,7 @@
          rtot = s% photosphere_r*Rsun
          teff  = s% Teff	 
          !SVP only works in stellar masses betwen 1.0 Msun and 10.0 Msun
-         if (mtot<1.0 .and. mtot>10.0) then
+         if (mtot/m_sol<1.0 .or. mtot/m_sol>10.0) then
             return
          end if 
          !-----------------------------------------------------------------------------------------------------------------------------
