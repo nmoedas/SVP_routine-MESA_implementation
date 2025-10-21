@@ -9,6 +9,6 @@ SVP.f - The routine that needs to be implemented in run_star_extra.f of MESA, af
 
 SVP_2020.zip - it contains the SVP tables (version released in 2020), and the main routines of SVP that are called in SVP.f, the ''mod_svp.f'' and ''svp_codes.f''. The mod_svp.f should be called in the makefile that compiles before running the model. 
 
-SVP_2024.zip - it contains the SVP tables (version released in 2024), and the main routines of SVP that are called in SVP.f, the ''mod_svp.f'' and ''svp_codes.f''. The mod_svp.f should be called in the makefile that compiles before running the model. 
+SVP_2024.zip - it contains the SVP tables (version released in 2024), and the main routines of SVP that are called in SVP.f, the ''mod_svp.f'' and ''svp_codes.f''. The mod_svp.f should be called in the makefile that compiles before running the model. (It updates the interpolation routine used)
                
 
