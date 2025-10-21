@@ -12,3 +12,5 @@ MESA by default does not allow the use of radiative accelerations if the monochr
 6. Add a folder that contains the SVP routine, and add its directory in the makefile for the models;
 
 7. Finally, recompile/reinstall MESA after making the changes.
+
+(The implementation is the same using the SVP routine 2020 or 2024 updated)
