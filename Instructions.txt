@@ -1,16 +1,37 @@
-1. Add a new hook that creates null functions in the files star data.inc, star data def.inc, and star controls.inc in the star data folder;
+The implementation is the same using the SVP routine 2020 or 2024 updated
+Here there are only instructions to implement in MESA (r12778 and 24.08.1) versions.
+In versions before 24.08.1 there should be similar instructions for one or other versions.
+Any question in the implementation you can contact: nuno.martinsmoedas@inaf.it
+ 
+---------Implementing in mesa-r12778-------------------------------
 
-2. Create a new hook file/module called other g rad.f90 and add in the mesa makefile for compile in MESA;
+1. Add a new hook that creates null functions in the files star_data.inc, star_data_def.inc, and star_controls.inc in the star_data folder;
 
-3. Add in the control default that this rootin’ is off by default in MESA;
+2. Create a new hook file/module called other_g_rad.f90 and add in the mesa makefile for compile in MESA;(in star/other directory)
 
-4. In the radiative acceleration root (in the diffusion procs.f90), add a condition to select whether to use the hook or the default routine;
+3. Add in the control.default that this rootin’ is off by default in MESA (in star/defaults directory);
 
-5. Add a condition in the diffusion routine that allows us to turn monochromatic opacity on or off when using SVP. 
-MESA by default does not allow the use of radiative accelerations if the monochromatic opacities are not active;
+4. In the radiative acceleration root (in the diffusion_procs.f90, in star/private directory), add a condition to select whether to use the hook or the default routine;(in the subroutine setup_struct_info());
+
+5. Add a condition in the diffusion routine that allows us to turn monochromatic opacity on or off when using SVP. MESA by default does not allow the use of radiative accelerations if the monochromatic opacities are not active (in the diffusion_procs.f90 and diffusion.f90 , in star/private directory);
 
 6. Add a folder that contains the SVP routine, and add its directory in the makefile for the models;
 
 7. Finally, recompile/reinstall MESA after making the changes.
 
-(The implementation is the same using the SVP routine 2020 or 2024 updated)
+---------Implementing in mesa-24.08.1-------------------------------
+The implementation in this version is similar to the old one however there are some differences.
+
+1. Add a new hook that creates null functions in the files star_data_procedures.inc, star_data_def.inc, and star_controls.inc in the star_data folder;
+
+2. Create a new hook file/module called other_g_rad.f90 and add in the mesa makefile for compile in MESA;(in star/other directory)
+
+3. Add in the control.default that this rootin’ is off by default in MESA (in star/defaults directory);
+
+4. In the radiative acceleration root (in the diffusion_procs.f90, in star/private directory), add a condition to select whether to use the hook or the default routine;(in the subroutine setup_struct_info());
+
+5. Does not need to add a condition to turn the monochromatic opacity on or off when using SVP in the recent versions of MESA. In the physics inputs can use the parameter of op_mono_method = '', leave empty to no monochromatic opacity or use 'hu' for using the original method or using 'mombarg' to use the updated and optimased monochromatic opacity.
+
+6. Add a folder that contains the SVP routine, and add its directory in the makefile for the models;
+
+7. Finally, recompile/reinstall MESA after making the changes.
