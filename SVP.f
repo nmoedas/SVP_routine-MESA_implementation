@@ -84,11 +84,11 @@
          Xi=1-s% initial_z-s% initial_y
          if (s%X(nz)<=1d-5)  then
             return
-         else if (abs((Xi-s%center_h1)/Xi)<=0.01) then
+         else if (abs((Xi-s%center_h1)/Xi)<=0.005) then
             return
          end if
-         !defining internal variavais (to avoid NAN or random values)
-		     elem_id(:)=-1  
+         !defining internal variables (to avoid NAN or random values)
+		 elem_id(:)=-1  
          elem_name(:)= ''
          typical_charge(:,:)=0
          Aj(:)=0;
@@ -145,7 +145,10 @@
          end if
          !-----------------------------------------------------------------------------------------------------------------------------
          do i=1, nz 
-         		!Calculation of electron density
+         	!Calculation of electron density
+			!Using full or partial ionisation has some difference in the grad calculated.
+			!usually negligible, nevertheless, it is preferable use the partial ionisation 
+			!as it more physically accurate
             if (s% x_logical_ctrl(7)) then   
                !full ionisation aproximation 
                Mnel= s%rho(i) * avo*(1+s% X(i))/2
