@@ -11,4 +11,5 @@ SVP_2020.zip - it contains the SVP tables (version released in 2020), and the ma
 
 SVP_2024.zip - it contains the SVP tables (version released in 2024), and the main routines of SVP that are called in SVP.f, the ''mod_svp.f'' and ''svp_codes.f''. The mod_svp.f should be called in the makefile that compiles before running the model. (It updates the interpolation routine used)
                
-Any questions you can send me an email to nuno.martinsmoedas@inaf.it
+Any questions you can send me an email to nammo@dtu.dk
+
